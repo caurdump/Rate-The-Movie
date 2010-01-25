@@ -1,0 +1,53 @@
+/*
+ * Reference
+ * http://woork.blogspot.com/2009/08/css3-rounded-corners-for-every-browser.html
+ */
+
+body
+{
+	background-color:#b0c4de;
+}
+
+/* For rounded corners */
+
+.myInput {
+    margin: 2px auto;
+    color: #333;
+    width: 200px;
+    background-color: #FFF;
+    border: 1px solid #AACCEE;
+	padding:6px;
+	margin-bottom:10px;
+	
+    /* Do rounding (native in Firefox and Safari) */
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+  
+}
+
+.myBox {
+    width: 220px;
+    padding: 10px;
+    background-color: #DDEEF6;
+    border: 1px solid #DDEEF6;
+
+    /* Do rounding (native in Firefox and Safari) */
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+}
+
+.button{
+	border:0; margin:0; padding:0;
+	background:#33B9F3;
+	border:solid 1px #3399DD;
+	color:#FFFFFF;
+	font-weight:bold;
+	padding:4px;
+	
+    /* Do rounding (native in Firefox and Safari) */
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+
+}
+
+

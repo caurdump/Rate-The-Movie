@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Rate the Movie !</title>
+		<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+		<script type="text/javascript">
+			var movie_list = new Object; //movie_list is an associative array
+			$(document).ready({
+				type:"GET",
+				url:"getxml.php",
+				datatype:"xml",
+				success:function(xml){
+						$(xml).find('movie').each(function(){
+						var name_text = $(this).find('name').text();
+						var url_text = $(this).find('url').text();
+						movie_list[name_text] = url_text ;
+						$('<li></li>').html(name_text + ' (' + url_text + ')').appendTo('#update-target ol');
+
+					});
+				}
+				
+			}); //closing $.ajax
+		</script>
+    </head>
+    <body>
+         <p>
+       <div id='update-target'>
+         <a href="#">Click here to load addresses</a>
+         <ol></ol>
+       </div>
+     </p>
+
+    </body>
+</html>
